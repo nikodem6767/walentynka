@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>💗 Tak!!! 💗</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: "Comic Sans MS", cursive;
+            text-align: center;
+            background: linear-gradient(135deg, #ffb0da, #ff7abb, #ff4fa0);
+            background-size: 400% 400%;
+            animation: gradientMove 9s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 80px;
+            color: white;
+            margin-top: 150px;
+            text-shadow: 0 0 40px white, 0 0 70px #ffd6f0;
+        }
+
+        p {
+            font-size: 35px;
+            color: #fff0fa;
+            text-shadow: 0 0 20px #ffffffaa;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: white;
+            opacity: 0.85;
+            animation: fall linear infinite;
+            text-shadow: 0 0 12px white;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Wiedziałem! 💗</h1>
+    <p>Jesteś moją Walentynką! 💞</p>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💗";
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.animationDuration = 4 + Math.random() * 6 + "s";
+
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 11000);
+        }
+
+        setInterval(createHeart, 200);
+    </script>
+
+</body>
+</html>
+
